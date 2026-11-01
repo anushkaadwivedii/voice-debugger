@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Talk through Python setup problems with a patient voice companion." />
+    <title>Voice Debugger — Talk it through</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="Voice Debugger home"><span class="brand-icon">v<span></span></span><span>voice<span class="brand-light">debugger</span></span></a>
+        <div class="workspace-label">YOUR WORKSPACE</div>
+        <div class="nav-current"><span class="nav-icon">◉</span> Voice session <span class="nav-dot"></span></div>
+        <div class="sidebar-note"><span class="small-label">A LITTLE LESS STUCK</span><p>You bring the problem.<br />We’ll talk it through.</p><div class="tiny-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="sidebar-bottom"><span class="initials">AD</span><div>Personal workspace<small>Local experiment · v0.1</small></div></div>
+      </aside>
+      <main>
+        <header class="topbar"><span>Workspace <span class="slash">/</span> Voice session</span><span class="experiment-pill"><span></span> Learning in progress</span></header>
+        <div class="page">
+          <div class="intro"><div><p class="eyebrow">A FRESH PERSPECTIVE, OUT LOUD</p><h1>Let’s talk it through.</h1><p class="subtitle">A patient second pair of ears for your Python problems.</p></div><span class="version">EXPERIMENT 001<br /><strong>Voice first.</strong></span></div>
+          <section id="setup" class="setup-card" hidden aria-labelledby="setup-title">
+            <div class="setup-symbol" aria-hidden="true">↗</div><div class="setup-body"><h2 id="setup-title">Connect your accounts to get started</h2><p id="setup-description">Checking your local setup…</p><details><summary>Show setup steps</summary><p>Fill in the four blank values in your project’s <code>.env</code> file. Your LiveKit URL, API key, and secret come from the same LiveKit project. Your Google key comes from Google AI Studio.</p><p>Keep both projects on their free plans. Save the file, restart <code>python3 run.py</code>, then check again. Keep keys in the local file.</p><p id="missing-fields"></p></details></div><button id="recheck" class="button button-outline">Check again <span aria-hidden="true">↻</span></button>
+          </section>
+          <div class="session-grid">
+            <section class="session-card" aria-labelledby="session-heading">
+              <div class="card-top"><span class="small-label" id="session-heading">YOUR VOICE SESSION</span><span class="time" id="timer" aria-label="Time remaining">05:00</span></div>
+              <div class="orb-area"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div id="orb" class="orb"><div class="orb-shine"></div><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div><span id="state-badge" class="state-badge"><span></span><span id="state">Checking setup</span></span></div>
+              <h2 id="session-title">One problem. One step at a time.</h2><p id="session-description" class="session-description">Tell me what you’re trying to do and where you got stuck.<br />You can interrupt, clarify, or change your mind.</p>
+              <div class="controls"><button id="start" class="button button-primary" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg><span>Start conversation</span></button><button id="mute" class="button button-outline" hidden aria-pressed="false">Mute microphone</button><button id="end" class="button button-end" hidden>End session</button><button id="play-audio" class="button button-outline" hidden>Enable speaker audio</button></div>
+              <div id="error" class="error" role="alert" hidden></div><p class="session-footnote"><span aria-hidden="true">◷</span> Five-minute sessions · Headphones recommended</p>
+            </section>
+            <aside class="side-cards"><section class="guide-card"><div class="guide-icon" aria-hidden="true">✳</div><h2>Start wherever you are.</h2><p>No perfect explanation needed. An error message is a good beginning.</p><div class="example"><span>01</span><p>“I installed the package,<br />but Python can’t find it.”</p></div><div class="example"><span>02</span><p>“VS Code is using the<br />wrong Python version.”</p></div><div class="example"><span>03</span><p>“I’m not sure my virtual<br />environment is active.”</p></div></section><section class="scope-card"><span class="scope-icon" aria-hidden="true">◎</span><div><h3>Just our voices, for now.</h3><p>You stay in control of your computer. Screen sharing comes in the next experiment.</p></div></section></aside>
+          </div>
+          <section class="transcript-card" aria-labelledby="transcript-heading"><div class="transcript-header"><div><h2 id="transcript-heading">The conversation</h2><p>A little context to keep us on the same page.</p></div><span class="transcript-tag">THIS SESSION ONLY</span></div><div id="transcript" class="transcript" role="log" aria-label="Conversation transcript"><div id="transcript-empty" class="transcript-empty"><span aria-hidden="true">☷</span><p>Your words will appear here once the conversation starts.</p></div></div></section>
+          <footer><span>Built for curiosity. A work in progress.</span><span>Audio is sent to LiveKit and Google during a session. Use sample problems without secrets.</span></footer>
+        </div>
+      </main>
+    </div>
+    <div id="remote-audio"></div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

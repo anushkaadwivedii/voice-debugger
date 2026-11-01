@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-debugger"
+version = "0.1.0"
+description = "A local voice companion for troubleshooting Python setup problems."
+requires-python = ">=3.10"
+dependencies = [
+  "livekit-agents[google]>=1.8.5,<1.9",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "python-dotenv>=1.0,<2",
+]
+
+[project.optional-dependencies]
+dev = ["httpx>=0.28,<1", "pytest>=8,<10"]
+
+[project.scripts]
+voice-debugger = "voice_debugger.server:main"
+voice-debugger-agent = "voice_debugger.agent:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
